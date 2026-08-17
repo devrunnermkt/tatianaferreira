@@ -1,0 +1,15 @@
+# Material de origem — não precisa ir para o site publicado.
+# (o PDF tem 754KB e a textura já foi extraída dele para assets/)
+IdVisualTatiana Imagem 1.pdf
+
+# Fotos originais soltas na raiz — as versões em uso estão em assets/
+/tatiana-cadeira.jpg
+/tatiana-livro.jpg
+
+# Configuração local do editor
+.claude/
+
+# Lixo de sistema / Google Drive
+desktop.ini
+Thumbs.db
+.DS_Store

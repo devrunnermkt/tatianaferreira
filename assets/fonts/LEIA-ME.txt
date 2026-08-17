@@ -1,0 +1,13 @@
+﻿Coloque aqui os arquivos da fonte Albra Text, em .woff2, com estes nomes exatos:
+
+  AlbraText-Regular.woff2   (peso 400)
+  AlbraText-Medium.woff2    (peso 500)
+  AlbraText-Bold.woff2      (peso 700)
+
+Assim que os arquivos estiverem nesta pasta, a pagina passa a usar a Albra
+automaticamente - nao precisa mexer no CSS.
+
+Sem eles, os titulos caem na Playfair Display (fallback carregado do Google Fonts).
+
+Se voce so tiver .otf/.ttf, converta para .woff2 antes - o formato web e bem
+mais leve e tem suporte universal nos navegadores.
