@@ -1,0 +1,5 @@
+# Arquivos de desenvolvimento — não precisam ir para o site publicado.
+# ATENÇÃO: nunca inclua assets/ aqui, é a pasta das imagens.
+server.js
+copy.md
+.claude/
