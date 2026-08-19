@@ -358,7 +358,44 @@ h3{font-size:1.12rem;font-weight:700;line-height:1.3}
 .facts span{font-size:.79rem;font-weight:300;color:var(--text-light)}
 
 /* ============================================================
-   05 — FAQ
+   05 — ATENDIMENTO (presencial + online)
+   ============================================================ */
+.care-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch}
+.care-card{
+  display:flex;flex-direction:column;overflow:hidden;
+  background:var(--cream-card);border-radius:26px;box-shadow:var(--shadow-sm);
+}
+.care-visual{position:relative;height:clamp(210px,23vw,268px);background:var(--beige)}
+.care-visual iframe{width:100%;height:100%;border:0;display:block}
+.care-visual--online{background-color:var(--pink)}
+.care-visual--online img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.care-visual--online::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg, rgba(90,41,7,0) 62%, rgba(90,41,7,.16));
+}
+.care-badge{
+  position:absolute;right:16px;bottom:14px;z-index:2;
+  display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:99px;
+  background:rgba(255,255,255,.94);color:var(--pink);font-size:.78rem;font-weight:600;
+  box-shadow:0 8px 22px rgba(120,10,50,.20);
+}
+.care-badge svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.care-body{flex:1;display:flex;flex-direction:column;gap:10px;padding:26px 26px 30px}
+.care-tag{
+  align-self:flex-start;display:inline-flex;align-items:center;gap:7px;
+  padding:7px 14px;border-radius:99px;background:var(--pink-tint);color:var(--pink);
+  font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+}
+.care-tag svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.care-card h3{color:var(--brown)}
+.care-card p{font-size:.9rem;font-weight:300;line-height:1.6;max-width:46ch}
+.care-meta{list-style:none;display:grid;gap:9px;margin:4px 0 8px}
+.care-meta li{display:flex;gap:10px;font-size:.86rem;font-weight:300;color:var(--text-light)}
+.care-meta svg{flex-shrink:0;width:16px;height:16px;margin-top:4px;stroke:var(--pink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.care-card .btn{margin-top:auto;align-self:flex-start;padding:13px 26px;font-size:.9rem}
+
+/* ============================================================
+   06 — FAQ
    ============================================================ */
 .faq{max-width:830px;margin:0 auto;display:grid;gap:13px}
 .faq details{
@@ -382,7 +419,7 @@ h3{font-size:1.12rem;font-weight:700;line-height:1.3}
 .faq .answer{padding:0 28px 24px;font-size:.92rem;font-weight:300;line-height:1.65;max-width:68ch}
 
 /* ============================================================
-   06 — CTA FINAL / CONTATO
+   07 — CTA FINAL / CONTATO
    ============================================================ */
 .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:46px 0 56px}
 .contact-card{
@@ -467,7 +504,7 @@ a.contact-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,
   .section{padding:64px 0}
   .hero{padding:104px 0 80px}
   .nav-cta{width:100%}
-  .pain-grid,.benefit-grid,.facts{grid-template-columns:1fr}
+  .pain-grid,.benefit-grid,.facts,.care-grid{grid-template-columns:1fr}
   .btn-group{gap:11px}
   .btn{width:100%;padding:15px 24px}
   .head-center{margin-bottom:38px}
@@ -511,6 +548,7 @@ a.contact-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,
         <li><a href="#topo">Início</a></li>
         <li><a href="#beneficios">Benefícios</a></li>
         <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#atendimento">Atendimento</a></li>
         <li><a href="#faq">Dúvidas</a></li>
       </ul>
       <a class="btn btn-primary nav-cta" href="https://wa.me/5569993613773?text=Ol%C3%A1%2C%20Tatiana!%20Vi%20sua%20p%C3%A1gina%20e%20gostaria%20de%20agendar%20minha%20sess%C3%A3o." target="_blank" rel="noopener">Agendar sessão</a>
@@ -543,7 +581,7 @@ a.contact-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,
           <a class="btn btn-ghost" href="#sobre">Conheça meu trabalho</a>
         </div>
 
-        <p class="hero-note">Atendimento <b>100% online</b> &nbsp;·&nbsp; Adolescentes, adultos e idosos</p>
+        <p class="hero-note">Atendimento <b>online e presencial</b> &nbsp;·&nbsp; Adolescentes, adultos e idosos</p>
       </div>
 
       <div class="reveal hero-media">
@@ -675,12 +713,12 @@ a.contact-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,
           <li><svg viewBox="0 0 24 24"><path d="M12 1.6l2.3 2 3-.3 1 2.9 2.7 1.4-1 2.9 1 2.9-2.7 1.4-1 2.9-3-.3-2.3 2-2.3-2-3 .3-1-2.9L2 14.4l1-2.9-1-2.9 2.7-1.4 1-2.9 3 .3z"/><path d="M8.6 12.1l2.3 2.3 4.4-4.5" fill="none" stroke="#FEF8F5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Psicóloga | CRP 24/04476</b></span></li>
           <li><svg viewBox="0 0 24 24"><path d="M12 1.6l2.3 2 3-.3 1 2.9 2.7 1.4-1 2.9 1 2.9-2.7 1.4-1 2.9-3-.3-2.3 2-2.3-2-3 .3-1-2.9L2 14.4l1-2.9-1-2.9 2.7-1.4 1-2.9 3 .3z"/><path d="M8.6 12.1l2.3 2.3 4.4-4.5" fill="none" stroke="#FEF8F5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Especialista</b> em <b>Gestalt Terapia</b></span></li>
           <li><svg viewBox="0 0 24 24"><path d="M12 1.6l2.3 2 3-.3 1 2.9 2.7 1.4-1 2.9 1 2.9-2.7 1.4-1 2.9-3-.3-2.3 2-2.3-2-3 .3-1-2.9L2 14.4l1-2.9-1-2.9 2.7-1.4 1-2.9 3 .3z"/><path d="M8.6 12.1l2.3 2.3 4.4-4.5" fill="none" stroke="#FEF8F5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Formação em <b>Terapia Sistêmica Familiar</b> Básica e Avançada</span></li>
-          <li><svg viewBox="0 0 24 24"><path d="M12 1.6l2.3 2 3-.3 1 2.9 2.7 1.4-1 2.9 1 2.9-2.7 1.4-1 2.9-3-.3-2.3 2-2.3-2-3 .3-1-2.9L2 14.4l1-2.9-1-2.9 2.7-1.4 1-2.9 3 .3z"/><path d="M8.6 12.1l2.3 2.3 4.4-4.5" fill="none" stroke="#FEF8F5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Atendimento online</b> para adolescentes, adultos e idosos</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 1.6l2.3 2 3-.3 1 2.9 2.7 1.4-1 2.9 1 2.9-2.7 1.4-1 2.9-3-.3-2.3 2-2.3-2-3 .3-1-2.9L2 14.4l1-2.9-1-2.9 2.7-1.4 1-2.9 3 .3z"/><path d="M8.6 12.1l2.3 2.3 4.4-4.5" fill="none" stroke="#FEF8F5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Atendimento online e presencial</b> para adolescentes, adultos e idosos</span></li>
         </ul>
 
         <ul class="facts">
           <li><span class="fact-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Duração da sessão</strong><span>50 minutos</span></div></li>
-          <li><span class="fact-dot"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><strong>Modalidade</strong><span>100% online</span></div></li>
+          <li><span class="fact-dot"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><strong>Modalidade</strong><span>Online e presencial</span></div></li>
           <li><span class="fact-dot"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 19a6.5 6.5 0 0113 0M17 5.5a3 3 0 010 5.6M18.5 19a6 6 0 00-3-5"/></svg></span><div><strong>Atendimento</strong><span>Adolescentes, adultos e idosos</span></div></li>
           <li><span class="fact-dot"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><div><strong>Sigilo</strong><span>Ético e confidencial</span></div></li>
         </ul>
@@ -692,7 +730,63 @@ a.contact-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,
 </section>
 
 <!-- ==========================================================
-     05 — FAQ
+     05 — ATENDIMENTO (presencial + online)
+     ========================================================== -->
+<section id="atendimento" class="section" style="background:var(--white)">
+  <div class="wrap">
+
+    <div class="head-center reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Atendimento presencial e online</h2>
+      <p class="lead">Você escolhe o formato que faz mais sentido para o seu momento — os dois seguem o mesmo compromisso ético, o mesmo cuidado e a mesma duração de sessão.</p>
+    </div>
+
+    <div class="care-grid">
+
+      <article class="care-card reveal">
+        <div class="care-visual">
+          <iframe
+            src="https://www.google.com/maps?q=-8.7432011,-63.8765224(EELLO+Psicologia+e+Sa%C3%BAde)&amp;z=17&amp;hl=pt-BR&amp;output=embed"
+            title="Mapa do consultório — EELLO Psicologia e Saúde, Porto Velho/RO"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <div class="care-body">
+          <span class="care-tag"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Presencial</span>
+          <h3>No consultório, em Porto Velho</h3>
+          <p>Um espaço reservado e acolhedor para a sessão acontecer frente a frente, no seu tempo.</p>
+          <ul class="care-meta">
+            <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>EELLO Psicologia e Saúde — Porto Velho/RO</span></li>
+            <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Sessões de 50 minutos, com horário marcado</span></li>
+          </ul>
+          <a class="btn btn-ghost" href="https://maps.app.goo.gl/VQ384MggMWzYV8tV9" target="_blank" rel="noopener">Ver rota no Google Maps</a>
+        </div>
+      </article>
+
+      <article class="care-card reveal">
+        <!-- foto: Edward Jenner / Pexels (licença livre, uso comercial sem atribuição) -->
+        <div class="care-visual care-visual--online">
+          <img src="assets/atendimento-online.jpg" alt="Mulher em sessão de terapia online, conversando por chamada de vídeo no notebook" loading="lazy" decoding="async">
+          <span class="care-badge"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="13" height="14" rx="2.6"/><path d="M15.5 10.4l6-3.2v9.6l-6-3.2z"/></svg>Sessão por vídeo</span>
+        </div>
+        <div class="care-body">
+          <span class="care-tag"><svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="13" rx="2"/><path d="M8 21h8M12 17.5V21"/></svg>Online</span>
+          <h3>Por chamada de vídeo, de onde você estiver</h3>
+          <p>A terapia online oferece praticidade e continuidade, mantendo o mesmo compromisso ético e técnico do atendimento presencial.</p>
+          <ul class="care-meta">
+            <li><svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="13" rx="2"/><path d="M8 21h8M12 17.5V21"/></svg><span>Basta um lugar tranquilo e internet estável</span></li>
+            <li><svg viewBox="0 0 24 24"><path d="M20.5 16.4v2.8a1.9 1.9 0 01-2.1 1.9 18.6 18.6 0 01-8.1-2.9 18.3 18.3 0 01-5.6-5.6A18.6 18.6 0 011.8 4.4 1.9 1.9 0 013.7 2.3h2.8a1.9 1.9 0 011.9 1.6c.1.9.3 1.8.7 2.7a1.9 1.9 0 01-.5 2l-1.1 1.1a15 15 0 005.6 5.6l1.1-1.1a1.9 1.9 0 012-.5c.9.4 1.8.6 2.7.7a1.9 1.9 0 011.6 2z"/></svg><span>Agendamento direto pelo WhatsApp</span></li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/5569993613773?text=Ol%C3%A1%2C%20Tatiana!%20Vi%20sua%20p%C3%A1gina%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o%20online." target="_blank" rel="noopener">Agendar sessão online</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     06 — FAQ
      ========================================================== -->
 <section id="faq" class="section" style="background:var(--cream)">
   <div class="wrap">
@@ -739,7 +833,7 @@ a.contact-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,
 </section>
 
 <!-- ==========================================================
-     06 — CTA FINAL / CONTATO
+     07 — CTA FINAL / CONTATO
      ========================================================== -->
 <section id="contato" class="section wave-top bg-silk-pink on-pink">
 
@@ -766,7 +860,7 @@ a.contact-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(120,
 
       <div class="contact-card reveal">
         <span class="contact-icon"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-        <div><strong>Atendimento</strong><span>100% online</span></div>
+        <div><strong>Atendimento</strong><span>Online e presencial</span></div>
       </div>
 
       <div class="contact-card reveal">
